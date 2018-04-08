@@ -1,0 +1,29 @@
+.brand,
+.brand-medium {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.brand-medium {
+  display: block;
+  margin-bottom: 12px;
+
+  @include respond-to('medium') {
+    display: none;
+  }
+}
+
+.logo {
+  width: 480px;
+  max-width: 100%;
+}
+
+.logo,
+.logo__lucky,
+.logo__clover {
+  fill: $green;
+}
+
+.logo__css {
+  fill: $forest;
+}

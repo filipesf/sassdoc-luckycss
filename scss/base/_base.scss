@@ -1,0 +1,96 @@
+/**
+ * Univeral box-sizing reset
+ */
+html {
+  @include prefixer(box-sizing, border-box, 'webkit' 'moz');
+}
+
+*, *::after, *::before {
+  @include prefixer(box-sizing, inherit, 'webkit' 'moz');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(89, 192, 104, 0.9);
+  color: white;
+}
+
+/**
+ * Body rules
+ */
+body {
+  font: 1em/1.35 $text-font-stack;
+  overflow: auto;
+  margin: 0;
+  background-color: #f9f9f9;
+  padding-top: 150px;
+
+  @include respond-to('medium') {
+    padding-top: 75px;
+  }
+}
+
+/**
+ * Links
+ */
+a {
+  transition: 0.15s;
+  text-decoration: none;
+  color: $primary-color;
+
+  &:hover {
+    text-decoration: underline;
+    // &, code {
+    //   color: $black;
+    // }
+  }
+}
+
+/**
+ * Vertical rhythm
+ */
+table p {
+  margin: 0 0 ($vertical-rhythm / 3);
+}
+
+/**
+ * Code
+ */
+:not(pre) > code {
+  color: #59c068;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/**
+ * Tables
+ */
+@include respond-to('small') {
+  table, tbody, tr, td, th {
+    display: block;
+  }
+
+  thead {
+    @include visually-hidden($extend: false);
+  }
+
+  tr {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid $medium-grey;
+  }
+
+  td, th {
+    &::before {
+      content: attr(data-label) ': ';
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+
+    p {
+      display: inline;
+    }
+  }
+}

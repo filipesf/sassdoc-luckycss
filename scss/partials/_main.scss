@@ -1,0 +1,82 @@
+/**
+ * Main wrapper
+ */
+.main {
+  background: #f9f9f9;
+  position: relative;
+
+  @include respond-to('medium') {
+    padding-left: $sidebar-width;
+	  padding-top: 0;
+    min-height: 45em;
+  }
+}
+
+/**
+ * Main sections
+ */
+.main__section {
+  margin-top: 5em;
+
+  .header + & {
+    margin-top: 0;
+    border-top: none;
+  }
+}
+
+/**
+ * Main titles
+ */
+.main__heading,
+.main__heading--secondary {
+  margin-top: 0;
+}
+
+/**
+ * Primary headings
+ */
+.main__heading {
+  color: #eee;
+  font-size: 3.5em;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  background-color: $green;
+  padding: 205px 0 1em 0;
+
+  @include respond-to('medium') {
+    padding: 115px 0 1em 0;
+  }
+}
+
+/**
+ * Secondary headings
+ */
+.main__heading--secondary {
+  font-size: 3em;
+  background-color: #e6e6e6;
+  color: $forest;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 175px;
+  padding-bottom: 24px;
+  margin-bottom: $vertical-rhythm * -2;
+  position: relative;
+
+  @include respond-to('medium') {
+    padding-top: 100px;
+  }
+
+  .container {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.main__item {
+  padding-top: 100px;
+
+  @include respond-to('medium') {
+    padding-top: 25px;
+  }
+}
