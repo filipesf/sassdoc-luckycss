@@ -1,13 +1,9 @@
 <div class="sidebar__header">
   <h1 class="sidebar__title">
     {% if package.homepage %}
-      <section class="brand">
-        <a href="{{ package.homepage }}"><img src="assets/images/logo_full_inline.svg" alt="LuckyCSS* Logo" /></a>
-      </section>
+      <a href="{{ package.homepage }}"><img src="assets/images/logo_full_inline.svg" alt="LuckyCSS* Logo"></a>
     {% else %}
-      <section class="brand">
-        <img src="assets/images/logo_full_inline.svg" alt="LuckyCSS* Logo" />
-      </section>
+      <img src="assets/images/logo_full_inline.svg" alt="LuckyCSS* Logo">
     {% endif %}
   </h1>
 </div>
@@ -20,7 +16,7 @@
   {# Some items documented #}
   {% else %}
     <button type="button" class="btn-toggle  js-btn-toggle" data-alt="Open all">Close all</button>
-    <section class="sideabr__nav">
+
     {# Loop over the groups #}
     {% for group_name, group in data.byGroupAndType %}
       <p class="sidebar__item  sidebar__item--heading" data-slug="{{ group_name }}"><a href="#{{ group_name }}">{{ groups[group_name] }}</a></p>
@@ -49,6 +45,5 @@
       {% endfor %}
 
     {% endfor %}
-    </section>
   {% endif %}
 </div>
